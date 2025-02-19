@@ -15,15 +15,10 @@ jobs:
       - name: Configurar JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 17
+          java-version: '11'
           distribution: 'temurin'
-          cache: 'maven'
+          cache: 'gradle'
       
-      - name: Instalar dependencias
-        run: |
-          mvn dependency:go-offline -Dmaven.test.skip=true -Dspring.jvm.memory="-Xmx512m -Xms256m"
-
-      - name: Compilar aplicação
-        run: mvn clean package -DskipTests -Dmaven.test.skip=true -Dspring.jvm.memory="-Xmx512m -Xms256m"
-          
+      - name: Build with Gradle
+        run: ./gradlew build -x test
 
