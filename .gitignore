@@ -5,3 +5,19 @@ build/
 *.log
 *.txt
 *.xml
+
+libs/**/*.jar
+libs/**/*.zip
+libs/**/*.war
+libs/**/*.ear
+libs/**/*.tar
+libs/**/*.gz
+libs/**/*.bz2
+
+# gradle
+.gradle/
+
+# gradle cache
+.gradle/caches/
+
+
